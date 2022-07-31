@@ -5,8 +5,8 @@ Examples from the **"Section 14: Sessions & Cookies"** of the course **"NodeJS -
 Section 14 covered:
 
 - [x] What is a Cookie?
-- [ ] The Current Project Status
-- [ ] Optional: Creating the Login Form
+- [x] The Current Project Status
+- [x] Optional: Creating the Login Form
 - [ ] Adding the Request Driven Login Solution
 - [ ] Setting a Cookie
 - [ ] Manipulating Cookies
