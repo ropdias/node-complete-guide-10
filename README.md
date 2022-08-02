@@ -13,7 +13,7 @@ Section 14 covered:
 - [x] Configuring Cookies
 - [x] What is a Session?
 - [x] Initializing the Session Middleware
-- [ ] Using the Session Middleware
+- [x] Using the Session Middleware
 - [ ] Using MongoDB to Store Sessions
 - [ ] Sessions & Cookies - A Short Summary
 - [ ] Deleting a Cookie

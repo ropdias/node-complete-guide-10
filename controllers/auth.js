@@ -1,10 +1,11 @@
 exports.getLogin = (req, res, next) => {
-  const isLoggedIn =
-    req.get("Cookie").split(";")[0].trim().split("=")[1] === "true";
+  // const isLoggedIn =
+  //   req.get("Cookie").split(";")[0].trim().split("=")[1] === "true";
+  console.log(req.session.isLoggedIn);
   res.render("auth/login", {
     path: "/login",
     pageTitle: "Login",
-    isAuthenticated: isLoggedIn,
+    isAuthenticated: false,
   });
 };
 
@@ -20,6 +21,9 @@ exports.postLogin = (req, res, next) => {
   // authenticating the user. This can be an extra security layer because now the cookie will still be attached to every request
   // that is sent to the server but you can't read the cookie value from inside the browser javascript code. (In the developer tool
   // you can still read it)
-  res.setHeader("Set-Cookie", "loggedIn=true; Max-Age=10"); 
+  // res.setHeader("Set-Cookie", "loggedIn=true; Max-Age=10");
+
+  // The session object is added by the session middleware with app.use(session())
+  req.session.isLoggedIn = true;
   res.redirect("/");
 };
