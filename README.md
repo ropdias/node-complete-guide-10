@@ -8,7 +8,7 @@ Section 14 covered:
 - [x] The Current Project Status
 - [x] Optional: Creating the Login Form
 - [x] Adding the Request Driven Login Solution
-- [ ] Setting a Cookie
+- [x] Setting a Cookie
 - [ ] Manipulating Cookies
 - [ ] Configuring Cookies
 - [ ] What is a Session?
