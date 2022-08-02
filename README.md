@@ -14,8 +14,8 @@ Section 14 covered:
 - [x] What is a Session?
 - [x] Initializing the Session Middleware
 - [x] Using the Session Middleware
-- [ ] Using MongoDB to Store Sessions
-- [ ] Sessions & Cookies - A Short Summary
+- [x] Using MongoDB to Store Sessions
+- [x] Sessions & Cookies - A Short Summary
 - [ ] Deleting a Cookie
 - [ ] Fixing Some Minor Bugs
 - [ ] Making "Add to Cart" Work Again
