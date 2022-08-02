@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const session = require("express-session");
 
 const errorControler = require("./controllers/error");
 const User = require("./models/user");
@@ -18,6 +19,14 @@ const authRoutes = require("./routes/auth");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+
+//'secret' is used for signing the hash which secretly stores our ID in the cookie. (In production this should be a long string value)
+//'resave' means that the session will not be saved on every request that is done, but only if something changed in the session. (this improves performance)
+//'saveUninitialized' this will ensure that no session gets saved for a request where it doesn't need to be saved because nothing was changed about it.
+//'cookie' you can configure a cookie where you pass an object with properties like "maxAge" or "expires" or you can go with the default settings.
+app.use(
+  session({ secret: "my secret", resave: false, saveUninitialized: false })
+);
 
 app.use((req, res, next) => {
   User.findById("62e06ca841e20e4a7819d41b")
