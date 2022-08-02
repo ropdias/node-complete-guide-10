@@ -10,7 +10,7 @@ Section 14 covered:
 - [x] Adding the Request Driven Login Solution
 - [x] Setting a Cookie
 - [x] Manipulating Cookies
-- [ ] Configuring Cookies
+- [x] Configuring Cookies
 - [ ] What is a Session?
 - [ ] Initializing the Session Middleware
 - [ ] Using the Session Middleware
