@@ -9,7 +9,7 @@ Section 14 covered:
 - [x] Optional: Creating the Login Form
 - [x] Adding the Request Driven Login Solution
 - [x] Setting a Cookie
-- [ ] Manipulating Cookies
+- [x] Manipulating Cookies
 - [ ] Configuring Cookies
 - [ ] What is a Session?
 - [ ] Initializing the Session Middleware
