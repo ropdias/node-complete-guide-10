@@ -29,7 +29,7 @@ exports.postLogin = (req, res, next) => {
   User.findById("62e06ca841e20e4a7819d41b")
     .then((user) => {
       req.session.isLoggedIn = true;
-      req.session.user = user; // This is a full mongoose model so we can call all methods directly on that user
+      req.session.user = user; // This will remain a full mongoose model ONLY for this request
       req.session.save((err) => {
         console.log(err);
         res.redirect("/");

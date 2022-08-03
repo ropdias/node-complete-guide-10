@@ -42,6 +42,7 @@ app.use(
   })
 );
 
+// You need this middleware to get the full mongoose model so we can call all methods directly on that user for this request:
 app.use((req, res, next) => {
   if (!req.session.user) {
     return next();
