@@ -18,7 +18,7 @@ Section 14 covered:
 - [x] Sessions & Cookies - A Short Summary
 - [x] Deleting a Cookie
 - [x] Fixing Some Minor Bugs
-- [ ] Making "Add to Cart" Work Again
+- [x] Making "Add to Cart" Work Again
 - [ ] Two Tiny Improvements
 
 
