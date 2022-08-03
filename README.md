@@ -19,7 +19,7 @@ Section 14 covered:
 - [x] Deleting a Cookie
 - [x] Fixing Some Minor Bugs
 - [x] Making "Add to Cart" Work Again
-- [ ] Two Tiny Improvements
+- [x] Two Tiny Improvements
 
 
 
