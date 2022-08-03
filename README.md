@@ -16,7 +16,7 @@ Section 14 covered:
 - [x] Using the Session Middleware
 - [x] Using MongoDB to Store Sessions
 - [x] Sessions & Cookies - A Short Summary
-- [ ] Deleting a Cookie
+- [x] Deleting a Cookie
 - [ ] Fixing Some Minor Bugs
 - [ ] Making "Add to Cart" Work Again
 - [ ] Two Tiny Improvements

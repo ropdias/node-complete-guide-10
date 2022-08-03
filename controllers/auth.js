@@ -1,11 +1,12 @@
+const User = require("../models/user");
+
 exports.getLogin = (req, res, next) => {
   // const isLoggedIn =
   //   req.get("Cookie").split(";")[0].trim().split("=")[1] === "true";
-  console.log(req.session.isLoggedIn);
   res.render("auth/login", {
     path: "/login",
     pageTitle: "Login",
-    isAuthenticated: false,
+    isAuthenticated: req.session.isLoggedIn,
   });
 };
 
@@ -24,6 +25,19 @@ exports.postLogin = (req, res, next) => {
   // res.setHeader("Set-Cookie", "loggedIn=true; Max-Age=10");
 
   // The session object is added by the session middleware with app.use(session())
-  req.session.isLoggedIn = true;
-  res.redirect("/");
+  // req.session.isLoggedIn = true;
+  User.findById("62e06ca841e20e4a7819d41b")
+    .then((user) => {
+      req.session.isLoggedIn = true;
+      req.session.user = user; // This is a full mongoose model so we can call all methods directly on that user
+      res.redirect("/");
+    })
+    .catch((err) => console.log(err));
+};
+
+exports.postLogout = (req, res, next) => {
+  req.session.destroy((err) => {
+    console.log(err);
+    res.redirect("/");
+  });
 };

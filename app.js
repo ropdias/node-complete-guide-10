@@ -42,16 +42,6 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  User.findById("62e06ca841e20e4a7819d41b")
-    .then((user) => {
-      // req.user = new User(user.name, user.email, user.cart, user._id);
-      req.user = user; // This is a full mongoose model so we can call all methods directly on that user
-      next();
-    })
-    .catch((err) => console.log(err));
-});
-
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
