@@ -27,7 +27,7 @@ exports.postAddProduct = (req, res, next) => {
     .save() // This will be provided by mongoose
     .then((result) => {
       // Technically we don't get a promise but mongoose still gives us a then method
-      console.log(`Created Product: ${title} with id: ${result.insertedId}`);
+      console.log(`Created Product: ${title} with id: ${result._id}`);
       res.redirect("/admin/products");
     })
     .catch((err) => {

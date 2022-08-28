@@ -26,21 +26,30 @@ exports.postLogin = (req, res, next) => {
 
   // The session object is added by the session middleware with app.use(session())
   // req.session.isLoggedIn = true;
-  User.findById("62e06ca841e20e4a7819d41b")
+  User.findById("630b9e957f011c15a62b4864")
     .then((user) => {
-      req.session.isLoggedIn = true;
-      req.session.user = user; // This will remain a full mongoose model ONLY for this request
-      req.session.save((err) => {
-        console.log(err);
-        res.redirect("/");
-      });
+      if (user) {
+        req.session.isLoggedIn = true;
+        req.session.user = user; // This will remain a full mongoose model ONLY for this request
+        req.session.save((err) => {
+          if (err) console.log(err);
+          res.redirect("/");
+        });
+      } else {
+        console.log("User not found");
+        req.session.isLoggedIn = false;
+        req.session.save((err) => {
+          if (err) console.log(err);
+          res.redirect("/");
+        });
+      }
     })
     .catch((err) => console.log(err));
 };
 
 exports.postLogout = (req, res, next) => {
   req.session.destroy((err) => {
-    console.log(err);
+    if (err) console.log(err);
     res.redirect("/");
   });
 };
